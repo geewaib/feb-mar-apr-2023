@@ -12,3 +12,6 @@ public class SomeBasics {
         boolean b = false;
     }
 }
+
+//public class Confusion {
+//}
