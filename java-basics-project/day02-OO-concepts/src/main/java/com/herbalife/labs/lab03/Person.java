@@ -12,7 +12,6 @@ public class Person {
         this.citiesVisited = new City[0];
     }
 
-
     @Override
     public String toString() {
         return "Person{" +
