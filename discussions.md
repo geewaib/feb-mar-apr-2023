@@ -41,6 +41,38 @@ java -version
 * Eclipse you create a workspace and add projects
 * IntelliJ you create an empty project and add modules
 
+* When you create a java project say **'hello'** using Maven
+
+```
+	[hello]
+		- [src]
+			- [main]
+				- [java]
+					 - YOUR CODE GOES HERE
+				- [resources]
+					 - YOUR CONFIGURATION FILES GO HERE	 
+			- [test]
+				- [java]
+					- YOUR TEST CASES GO HERE
+				- [resources]
+					- YOUR CONFIGURATION FILES FOR TESTS GO HERE			 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
