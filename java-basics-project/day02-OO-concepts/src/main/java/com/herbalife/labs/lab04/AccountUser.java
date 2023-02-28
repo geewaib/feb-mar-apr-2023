@@ -20,7 +20,9 @@ public class AccountUser {
 //        for (int i = 0; i < 12; i++) {
 //            account.withdraw(100);
 //        }
-        System.out.println("Balance: " + account.getBalance());
+
+        String message = String.format("Account number: %s, Balance : %s", account.getAccountNumber(), account.getBalance());
+        System.out.println(message);
         System.out.println("***Print statement***");
         account.printStatement();
         account.withdraw(1000000);
@@ -34,7 +36,8 @@ public class AccountUser {
         account.withdraw(100);
         account.withdraw(100);
         account.withdraw(100);
-        System.out.println("Balance: " + account.getBalance());
+        String message = String.format("Account number: %s, Balance : %s", account.getAccountNumber(), account.getBalance());
+        System.out.println(message);
         System.out.println("***Print statement***");
         account.printStatement();
         //account.withdraw(100000);
