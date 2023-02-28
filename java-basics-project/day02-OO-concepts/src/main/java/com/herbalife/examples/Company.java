@@ -1,5 +1,5 @@
 package com.herbalife.examples;
-
+//Lombok
 public class Company {
     private static int numberOfCompanies;
 
