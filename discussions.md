@@ -35,9 +35,11 @@ java -version
 * There is no root namespace(**or package**) in Java
 * No partial classes in Java 
 
+### IDE
 
-
-
+* VS create a blank solution and add projects
+* Eclipse you create a workspace and add projects
+* IntelliJ you create an empty project and add modules
 
 
 
