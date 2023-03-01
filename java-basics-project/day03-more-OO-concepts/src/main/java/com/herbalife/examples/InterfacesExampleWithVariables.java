@@ -1,8 +1,10 @@
+package com.herbalife.examples;
+
 public class InterfacesExampleWithVariables {
     public static void main(String[] args) {
         System.out.println(Constants.PI);
         System.out.println(Constants.WITHDRAW_LIMIT);
-        //Constants.WITHDRAW_LIMIT = 11;
+        //com.herbalife.examples.Constants.WITHDRAW_LIMIT = 11;
     }
 }
 

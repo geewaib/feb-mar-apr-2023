@@ -1,3 +1,5 @@
+package com.herbalife.examples;
+
 public class InterfacesExampleLatestVersion {
     public static void main(String[] args) {
         Dog snoopy = new Dog();

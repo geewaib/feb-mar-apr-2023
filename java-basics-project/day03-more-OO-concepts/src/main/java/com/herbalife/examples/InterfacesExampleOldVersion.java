@@ -1,3 +1,5 @@
+package com.herbalife.examples;
+
 public class InterfacesExampleOldVersion {
     public static void main(String[] args) {
         Vehicle tesla = new Car();
@@ -11,10 +13,10 @@ interface Vehicle {
     void stop();
 }
 interface EV {}
-//class Car : Vehicle {..}
+//class com.herbalife.examples.Car : com.herbalife.examples.Vehicle {..}
 class Car implements Vehicle, EV {
 
-    //public void start() implements Vehicle.start {..}
+    //public void start() implements com.herbalife.examples.Vehicle.start {..}
     public void start() {
     }
 
