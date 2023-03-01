@@ -58,6 +58,16 @@ java -version
 					- YOUR CONFIGURATION FILES FOR TESTS GO HERE			 
 ```
 
+### Day 02
+
+* Classes and Objects
+* Java classes with private members and public gettter/setter methods (or properties)
+* All class names begin with UpperCase and methods/variables start with lowercase
+* **extends** is the keyword used for inheritance.
+* Method overriding in Java involves redefining the base class method with the same signature in the derived class
+* **super** is the keyword used to refer to the base class
+* **final** is the keyword used to define constant variables, sealed classes and sealed methods
+* **abstract** is used to define abstract classes
 
 
 
