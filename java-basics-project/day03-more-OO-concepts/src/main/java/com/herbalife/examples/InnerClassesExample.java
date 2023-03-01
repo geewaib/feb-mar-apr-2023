@@ -1,4 +1,5 @@
 package com.herbalife.examples;
+import commercial.companyName.projectName.moduleName.MyClass;
 
 public class InnerClassesExample {
     public static void main(String[] args) {

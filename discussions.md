@@ -70,7 +70,20 @@ java -version
 * **abstract** is used to define abstract classes
 
 
+### Packages
 
+* Namespaces are LOGICAL grouping of classes
+* Packages are physical grouping of classes
+* A namespace say **com.herbalife** is a logical grouping
+* A package say **com.herbalife** is a physical grouping. ie., a folder called **com** is created. It contains a folder **herbalife**
+
+* jdk contains the standard libraries
+* organized into modules
+* Each module is organized into packages
+* packages contains classes
+* **java.base** is the root module that contains all the packages that we need to use in our applications
+* Our applications still follow **package as the base structure**. Have not switched to modules
+* **java.lang** package is available by default in our code
 
 
 
