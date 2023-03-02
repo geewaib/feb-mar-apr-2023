@@ -85,7 +85,20 @@ java -version
 * Our applications still follow **package as the base structure**. Have not switched to modules
 * **java.lang** package is available by default in our code
 
+### Day 03 recap
 
+* Interfaces; default methods, static methods, abstract methods
+* Variables in interfaces are implicitly public, static and final
+* Enum -> Define enums if you want to enforce type-safety
+* Inner classes -> Inner classes can access private members of the outer classes
+* You can create inner class objects only using outer class objects
+* **outerClassObj.new InnerClass()**
+* Compiler generates **Outer$Inner.class**
+* Packages are folder structures. Each package is a folder/sub folder entity
+* java.lang is included by default
+* java.nio; java.util which contains collections
+* Set, List, Map
+* 
 
 
 
