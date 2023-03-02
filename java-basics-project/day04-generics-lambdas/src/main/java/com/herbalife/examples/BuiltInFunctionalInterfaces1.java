@@ -26,7 +26,7 @@ public class BuiltInFunctionalInterfaces1 {
         System.out.println(randomGenerator
                 .andThen(incrementer)
                 .apply(10));
-        
+
 
     }
 
