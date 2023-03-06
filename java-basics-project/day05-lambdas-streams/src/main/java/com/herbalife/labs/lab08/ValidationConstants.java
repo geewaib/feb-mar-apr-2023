@@ -1,7 +1,6 @@
 package com.herbalife.labs.lab08;
 
 import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public interface ValidationConstants {
