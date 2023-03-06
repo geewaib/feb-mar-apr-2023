@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class StreamApiBasics {
+    static Map<String, Long> citiesPopulationMap = new HashMap<>();
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50, 60);
         //A stream is a snapshot of the underlying collection
@@ -44,7 +45,7 @@ public class StreamApiBasics {
                 .forEach(it -> System.out.println(it));
 
 
-        Map<String, Long> citiesPopulationMap = new HashMap<>();
+
         citiesPopulationMap.put("Tokyo", 3294930L);
         citiesPopulationMap.put("Chennai", 294930L);
         citiesPopulationMap.put("Singapore", 31294930L);
@@ -57,6 +58,22 @@ public class StreamApiBasics {
                 .filter(city -> citiesPopulationMap.get(city) > 1000000L)
                 .forEach(it -> System.out.println(it));
 
+        citiesPopulationMap
+                .keySet()
+                .stream()
+                .filter(city -> {
+                    return citiesPopulationMap.get(city) > 1000000L;
+                })
+                .forEach(it -> System.out.println(it));
 
+        citiesPopulationMap
+                .keySet()
+                .stream()
+                .filter(StreamApiBasics::checkPopulationGt)
+                .forEach(System.out::println);
+
+    }
+    static boolean checkPopulationGt(String city) {
+        return citiesPopulationMap.get(city) > 100000L;
     }
 }
