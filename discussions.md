@@ -100,6 +100,44 @@ java -version
 * Set, List, Map
 * 
 
+### Lambdas
+
+* You have an interface with just one abstract method. ie., Functional interface
+* Create a separate class that implements the interface
+* Create an anonymous inner class that implements the interface
+* LAmbda expression
+* Lambda expressions are shortcut expressions to creating anonymous inner classes
+* JVM generates anonymous inner classes during runtime
+* Lambdas can be used with functional interfaces only
+* Lambdas can be passed around methods as arguments; stored in collections
+* From Design perspective, Lambdas are block of code that can be assigned to variables
+* Lambdas in Javascript are called **arrow functions**; => operator in Java; -> operator in Java
+* :: is the method reference operator; You can assign a reference to a method instead of a lambda expression
+* Built-in functional interfaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
