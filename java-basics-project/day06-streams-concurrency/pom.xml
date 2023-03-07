@@ -7,6 +7,12 @@
     <groupId>org.example</groupId>
     <artifactId>day06-streams-concurrency</artifactId>
     <version>1.0-SNAPSHOT</version>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id></id>-->
+<!--            <url>https://herbalife/mvnrepository</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
