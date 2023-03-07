@@ -115,6 +115,18 @@ java -version
 * :: is the method reference operator; You can assign a reference to a method instead of a lambda expression
 * Built-in functional interfaces
 
+### Stream API
+
+* Predicate, Function, Supplier, Consumer
+* Stream is a snapshot of the collection
+* Used for processing the data; not for modifying the data
+* By default, streams process items sequentially
+* **java.util.stream** package contains all the methods used in streams
+* .stream() method is used to create a stream
+* Streams cannot be reused; lazily evaluated; Cannot be used to modify the data
+* filter, map, reduce, collect, findFirst, findAny, min, max, sorted
+* Optional type is like a box with some data; you check if the box is empty or data is present and use **.get()**
+* Declarative style of programming when you use Stream API. You only write what to do, and don't worry about how to do
 
 
 
