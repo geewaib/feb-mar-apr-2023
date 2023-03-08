@@ -11,24 +11,34 @@ public class ExecutorsExample {
         //ExecutorService executorService = Executors.newFixedThreadPool(2);
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-        IntStream.range(1, 10).forEach(it -> {
+        IntStream.range(1, 20).forEach(it -> {
             executorService.submit(() -> {
-                while(true) {
+                while (true) {
                     System.out.println(name() + ": Writing code in Golang");
                     sleep(2000);
                 }
             });
         });
         executorService.submit(() -> {
-            while(true) {
+            while (true) {
                 System.out.println(name() + ": Reviewing code");
                 sleep(2000);
             }
         });
         executorService.submit(() -> {
-            while(true) {
+            while (true) {
                 System.out.println(name() + ": Writing code in JS");
                 sleep(2000);
+            }
+        });
+        executorService.submit(() -> {
+            while (true) {
+                System.out.println("***********Printing list of all threads running currently*****");
+                Thread
+                        .getAllStackTraces()
+                        .keySet()
+                        .forEach(th -> System.out.println(th.getName()));
+                sleep(5000);
             }
         });
     }
