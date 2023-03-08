@@ -127,8 +127,18 @@ java -version
 * filter, map, reduce, collect, findFirst, findAny, min, max, sorted
 * Optional type is like a box with some data; you check if the box is empty or data is present and use **.get()**
 * Declarative style of programming when you use Stream API. You only write what to do, and don't worry about how to do
+* Internals of Streams: Stream processes one element at a item. It passes it through all the stages. Unlike languages like JavaScript
+* flatMap: Used to flatten a collection of collections to a single collection. flatMap(Collection::stream)
 
+### Threading
 
+* Creating threads in Java leads to creating OS (native) threads
+* Create an instance of Thread class and pass the Runnable implementation. call start() method to run the thread
+* java.util.concurrent package
+* Use the classes like Executors to create pool of threads and submit your tasks(Runnable)
+* Number of threads you create depends on the number of cores, CPU or IO intensive operation
+* numberOfCores / (1 - blocking factor)
+* Creating more number of threads does not guarentee high performance. In fact, it may be the other way around.
 
 
 
