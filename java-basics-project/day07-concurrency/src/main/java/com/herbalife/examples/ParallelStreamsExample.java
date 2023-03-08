@@ -10,7 +10,7 @@ public class ParallelStreamsExample {
         //Streams process items sequentially
         //Parallel streams internally creates a forkjoinpool of threads = (numberOfCores - 1)
         ForkJoinPool forkJoinPool = new ForkJoinPool(100);
-        
+
 
         forkJoinPool.submit(() -> {
             IntStream.
