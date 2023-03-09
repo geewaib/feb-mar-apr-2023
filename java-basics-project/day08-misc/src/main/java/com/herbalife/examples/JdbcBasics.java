@@ -7,6 +7,20 @@ public class JdbcBasics {
         //insertPerson("Ram", "Narain", 32);
         insertPersonUsingPreparedStatement("Joe", "Martin", 35);
         printAllPersons();
+        printAllPersonsWithAgeGt(10);
+    }
+
+    /*
+    CREATE PROCEDURE `sp_sel_persons_with_age_gt` (in age_param int)
+    BEGIN
+        select * from persons where age > age_param;
+    END
+
+    call sp_sel_persons_with_age_gt(18);
+    *
+    * */
+    private static void printAllPersonsWithAgeGt(int age) {
+        //Call stored procedure here
     }
 
     private static void printAllPersons() throws SQLException {
