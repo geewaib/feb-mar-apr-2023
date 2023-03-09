@@ -6,7 +6,7 @@ public class JdbcBasics {
     public static void main(String[] args) throws SQLException {
         //insertPerson("Ram", "Narain", 32);
         insertPersonUsingPreparedStatement("Joe", "Martin", 35);
-        printAllPersons();
+        //printAllPersons();
         printAllPersonsWithAgeGt(10);
     }
 
@@ -19,8 +19,34 @@ public class JdbcBasics {
     call sp_sel_persons_with_age_gt(18);
     *
     * */
-    private static void printAllPersonsWithAgeGt(int age) {
+    private static void printAllPersonsWithAgeGt(int ageParam) throws SQLException {
         //Call stored procedure here
+        //call sp_sel_persons_with_age_gt(18);
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); //Type.GetType("");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "root");
+            String query = "{call sp_sel_persons_with_age_gt(?)}";
+            CallableStatement callableStatement = connection.prepareCall(query);
+            callableStatement.setInt("age_param", ageParam);
+            ResultSet rs = callableStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String firstName = rs.getString("first_name");
+                String lastName = rs.getString("last_name");
+                int age = rs.getInt("age");
+                System.out.println(id + ", " + firstName + " " + lastName + ", " + age);
+            }
+            rs.close();
+            callableStatement.close();
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            connection.close();
+        }
     }
 
     private static void printAllPersons() throws SQLException {
