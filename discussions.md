@@ -139,6 +139,8 @@ java -version
 * Number of threads you create depends on the number of cores, CPU or IO intensive operation
 * numberOfCores / (1 - blocking factor)
 * Creating more number of threads does not guarentee high performance. In fact, it may be the other way around.
+* Parallel streams
+* Future and CompletableFuture
 
 
 
