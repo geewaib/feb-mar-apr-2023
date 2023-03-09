@@ -40,12 +40,12 @@ public class JdbcBasics {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); //Type.GetType("");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "root");
-            String query = "insert into persons(first_name, last_name, age) values(?,?,?)";
+            String query = "insert into persons(first_name, last_name, age) values (?,?,?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setInt(3, age);
-            statement.executeUpdate(query);
+            statement.executeUpdate();
             statement.close();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
