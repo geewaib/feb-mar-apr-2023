@@ -5,4 +5,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+    <bean id="person1" class="com.herbalife.examples.oldStyle.Person">
+        <property name="name" value="Ram Narain"></property>
+        <property name="age" value="44"></property>
+        <property name="residence" ref="address1"/>
+    </bean>
+
+    <bean id="person2" class="com.herbalife.examples.oldStyle.Person">
+        <property name="name" value="Mary Joe"></property>
+        <property name="age" value="56"></property>
+        <property name="residence" ref="address1"/>
+    </bean>
+
+    <bean id="address1" class="com.herbalife.examples.oldStyle.Address">
+        <property name="city" value="Bengaluru"></property>
+        <property name="country" value="India"></property>
+    </bean>
+
+
 </beans>
