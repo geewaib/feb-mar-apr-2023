@@ -143,14 +143,32 @@ java -version
 * Future and CompletableFuture
 
 
+### Spring
+
+* JDK (Java Standard Edition)
+* web applications, web services, security, messaging, email, cron jobs, transactions, object pooling **JEE sdk**, J2EE
+* Enters Spring
+* Spring framework is a collection of libraries that provide functionalities to build enterprise level applications in Java
+* POJO framework
+* **Spring** =  *ASP.NET MVC + System.EnterpriseServices + Entity Framework + WCF *
+* Create a Maven/Gradle application; add the spring dependencies in pom.xml/build.gradle file. That's it!!!
+* **Dependency Injection**: mechanism by which you avoid writing unneccessary creation and lookup code.
+
+```
+# You want to insert a record in DB
+# LOad the driver
+# Create a Connection
+# Create a Statement
+# Execute the SQL
+# Close statement; close connection
+# Handle Exceptions
 
 
+# Execute the SQL
+```
 
-
-
-
-
-
+* Spring 6.x
+* Spring 5.x
 
 
 
