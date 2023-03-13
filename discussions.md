@@ -195,9 +195,14 @@ java -version
 
 
 
+### Lifecycle
 
-
-
+* ApplicationContext is the container
+* ApplicationContext is an active container; It **instantiates** all the components on startup
+* Defer the instantiation using **@Lazy**
+* All the components configured in Spring are in **SINGLETON** scope by default
+* You can change the scope using **@Scope** annotation
+* 
 
 
 

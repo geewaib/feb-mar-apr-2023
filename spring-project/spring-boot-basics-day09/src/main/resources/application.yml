@@ -1,0 +1,12 @@
+mystore: Staples
+shopping:
+  items: Stationary, Printers, Furniture
+
+training-data:
+  name: Spring boot training
+  venue: Malaysia
+  contents:
+    - Java basics
+    - REST API
+    - Kafka
+    - Quarkus
