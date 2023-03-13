@@ -170,6 +170,10 @@ java -version
 * Spring 6.x
 * Spring 5.x
 
+* Spring framework provides a  **"light weight container"**
+* **ApplicationContext** is the class that acts as the container
+* It is responsible for the life cycle of all the beans in the application
+
 
 
 
