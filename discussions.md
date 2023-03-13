@@ -174,6 +174,28 @@ java -version
 * **ApplicationContext** is the class that acts as the container
 * It is responsible for the life cycle of all the beans in the application
 
+#### Working with Core spring 
+
+* Create a Maven project
+* Add the spring dependencies
+* Create an xml file
+* Configure the component-scan base package
+* Create classes; Mark them as @Component and autowire them using @Autowired
+* Create a class with main method
+* Create ApplicationContext and pass the xml file
+* Access every bean(or component) and use them
+
+##### Spring boot
+
+* Enters Spring boot
+* Spring boot is a way by which you can bootstrap creating spring applications real quick
+* Is just an abstraction on Spring
+* Spring boot is 3.x (It internally uses Core Spring 6.x)
+* Spring boot 2.x (It internally uses Core Spring 5.x)
+
+
+
+
 
 
 
