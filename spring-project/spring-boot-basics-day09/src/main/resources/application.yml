@@ -1,3 +1,26 @@
+session-planner:
+  topics:
+    90:
+      - RoR
+      - Spring Unit Testing
+    60:
+      - Functional programming with Erlang
+      - Concurrency on the JVM
+    45:
+      - Scala Tricks
+      - Goroutines
+
+conference:
+  topics:
+    - { name: Functional programming with Erlang, duration: 60 }
+    - { name: Scala Tricks, duration: 45 }
+    - { name: Spring Unit Testing, duration: 90 }
+    - { name: Concurrency on the JVM, duration: 60 }
+    - { name: Goroutines, duration: 45 }
+    - { name: RoR, duration: 90 }
+
+
+
 mystore: Staples
 shopping:
   items: Stationary, Printers, Furniture
@@ -10,3 +33,4 @@ training-data:
     - REST API
     - Kafka
     - Quarkus
+    -
