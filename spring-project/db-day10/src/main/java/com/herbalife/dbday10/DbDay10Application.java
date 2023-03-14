@@ -19,6 +19,20 @@ public class DbDay10Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //personsDao.insertPerson("Ram", "Jothi", 34);
         //personsDao.insertPerson("Joe", "Blue", 45);
-        personsDao.updateAge(1, 48);
+        //personsDao.updateAge(1, 48);
+
+        personsDao.printPersonsWithAgeGt(10);
+
+        personsDao.getAllPersons().forEach(System.out::println);
+
+        personsDao.getFirstNames().forEach(System.out::println);
+        personsDao
+                .getAll()
+                .forEach(row -> {
+                    row.forEach((col, value) -> {
+                        System.out.println(col + ": " + value);
+                    });
+                    System.out.println();
+                });
     }
 }
