@@ -205,7 +205,17 @@ java -version
 * 
 
 
+#### Spring data JDBC
 
+``` sql
+create database training;
+create table training.persons(
+	id int not null primary key auto_increment,
+	first_name varchar(40),
+	last_name varchar(40),
+	age int
+);	
+```
 
 
 
