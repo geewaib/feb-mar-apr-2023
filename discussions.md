@@ -225,6 +225,16 @@ create table training.persons(
 * RowMapper, SimpleJdbcCall
 
 
+### List of annotations
+
+* @Component | @Service | @Repository
+* @Value
+* @Autowired
+* @Configuration, @Bean
+* @Qualifier, @Primary
+* @ConfigurationProperties(prefix = "")
+* @RestController
+
 
 
 
