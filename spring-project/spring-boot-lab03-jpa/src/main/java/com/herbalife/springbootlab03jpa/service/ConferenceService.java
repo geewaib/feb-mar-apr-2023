@@ -16,6 +16,7 @@ public class ConferenceService {
     @Autowired
     private TopicRepository topicRepository;
 
+    //NOT AN EFFICIENT WAY, because YOU ARE LOADING ALL THE RECORDS
     public boolean addTopic(String title, int duration) {
         boolean noTopicExists = getTopicStream()
                 .noneMatch(t -> t.getTitle().equals(title));
@@ -40,6 +41,7 @@ public class ConferenceService {
         return topicRepository.findAll();
     }
 
+    //NOT AN EFFICIENT WAY, because YOU ARE LOADING ALL THE RECORDS
     public boolean removeTopic(String title) {
         Topic existingTopic = getTopicStream()
                 .filter(t -> t.getTitle().equals(title))
