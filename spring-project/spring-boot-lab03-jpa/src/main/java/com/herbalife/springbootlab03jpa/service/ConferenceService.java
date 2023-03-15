@@ -44,13 +44,8 @@ public class ConferenceService {
         Topic existingTopic = getTopicStream()
                 .filter(t -> t.getTitle().equals(title))
                 .findAny()
-                .orElse(null);
-
-        if (existingTopic != null) {
-            topicRepository.delete(existingTopic);
-        } else {
-            throw new TopicNotFoundException(title);
-        }
+                .orElseThrow(() -> new TopicNotFoundException(title));
+        topicRepository.delete(existingTopic);
         return true;
     }
 }
