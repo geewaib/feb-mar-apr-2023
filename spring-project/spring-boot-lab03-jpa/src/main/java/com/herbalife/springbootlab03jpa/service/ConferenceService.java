@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Service
@@ -16,8 +17,22 @@ public class ConferenceService {
     @Autowired
     private TopicRepository topicRepository;
 
-    //NOT AN EFFICIENT WAY, because YOU ARE LOADING ALL THE RECORDS
     public boolean addTopic(String title, int duration) {
+        Optional<Topic> optionalTopic = topicRepository
+                .findByTitle(title);
+        if (optionalTopic.isEmpty()) {
+            Topic topic = new Topic();
+            topic.setTitle(title);
+            topic.setDuration(duration);
+            topicRepository.save(topic);
+        } else {
+            throw new TopicExistsException(title);
+        }
+        return true;
+    }
+
+    //NOT AN EFFICIENT WAY, because YOU ARE LOADING ALL THE RECORDS
+    public boolean addTopicAnotherApproach(String title, int duration) {
         boolean noTopicExists = getTopicStream()
                 .noneMatch(t -> t.getTitle().equals(title));
         if (noTopicExists) {
