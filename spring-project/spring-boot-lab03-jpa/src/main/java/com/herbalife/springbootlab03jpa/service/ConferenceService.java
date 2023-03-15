@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public class ConferenceService {
@@ -16,9 +17,7 @@ public class ConferenceService {
     private TopicRepository topicRepository;
 
     public boolean addTopic(String title, int duration) {
-        boolean noTopicExists = topicRepository
-                .findAll()
-                .stream()
+        boolean noTopicExists = getTopicStream()
                 .noneMatch(t -> t.getTitle().equals(title));
         if (noTopicExists) {
             Topic topic = new Topic();
@@ -31,14 +30,18 @@ public class ConferenceService {
         return true;
     }
 
+    private Stream<Topic> getTopicStream() {
+        return topicRepository
+                .findAll()
+                .stream();
+    }
+
     public List<Topic> getAllTopics() {
         return topicRepository.findAll();
     }
 
     public boolean removeTopic(String title) {
-        Topic existingTopic = topicRepository
-                .findAll()
-                .stream()
+        Topic existingTopic = getTopicStream()
                 .filter(t -> t.getTitle().equals(title))
                 .findAny()
                 .orElse(null);
