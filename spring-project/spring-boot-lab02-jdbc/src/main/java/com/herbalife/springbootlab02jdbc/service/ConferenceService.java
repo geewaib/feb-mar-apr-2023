@@ -2,27 +2,40 @@ package com.herbalife.springbootlab02jdbc.service;
 
 import com.herbalife.springbootlab02jdbc.dao.TopicsDao;
 import com.herbalife.springbootlab02jdbc.entity.Topic;
+import com.herbalife.springbootlab02jdbc.exception.TopicExistsException;
+import com.herbalife.springbootlab02jdbc.exception.TopicNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class ConferenceService {
+
     @Autowired
     private TopicsDao topicsDao;
 
     public boolean addTopic(String title, int duration) {
-        //true if succesfully inserted
-        //false if insertion fails
-        //Do not allow duplicate topics
+        int count = topicsDao.getTopicsCount(title);
+        if (count > 0) {
+            throw new TopicExistsException(title);
+        } else {
+            topicsDao.createTopic(title, duration);
+        }
+        return true;
     }
 
     public List<Topic> getAllTopics() {
-
+        return topicsDao.getAllTopics();
     }
 
     public boolean removeTopic(String title) {
-        //Throw NotFoundException if the topic doesn't exist
+        int count = topicsDao.getTopicsCount(title);
+        if (count > 0) {
+            topicsDao.removeTopic(title);
+        } else {
+            throw new TopicNotFoundException(title);
+        }
+        return true;
     }
 }

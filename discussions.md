@@ -217,6 +217,12 @@ create table training.persons(
 );	
 ```
 
+### Jdbc with Spring
+
+* **Spring data** dependencies
+* spring data jdbc
+* Wire **JdbcTemplate** and use the methods in the class
+* RowMapper, SimpleJdbcCall
 
 
 

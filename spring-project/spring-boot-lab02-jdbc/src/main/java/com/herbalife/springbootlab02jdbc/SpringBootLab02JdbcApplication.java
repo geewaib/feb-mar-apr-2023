@@ -18,6 +18,7 @@ public class SpringBootLab02JdbcApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        conferenceService.removeTopic("Goroutines");
+        conferenceService.getAllTopics().forEach(System.out::println);
     }
 }
