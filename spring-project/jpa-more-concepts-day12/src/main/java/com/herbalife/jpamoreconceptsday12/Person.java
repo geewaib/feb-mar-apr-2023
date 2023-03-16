@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @ToString
@@ -19,4 +21,15 @@ public class Person {
     private String lastName;
     @Column(nullable = true)
     private Integer age;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private List<Dog> dogs;
+
+    public void addDog(Dog dog) {
+        if(this.dogs == null) {
+            this.dogs = new ArrayList<>();
+        }
+        dogs.add(dog);
+    }
 }
