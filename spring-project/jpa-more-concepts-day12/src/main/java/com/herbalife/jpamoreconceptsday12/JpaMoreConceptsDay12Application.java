@@ -18,10 +18,12 @@ public class JpaMoreConceptsDay12Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        personRepository.loadPersonsWithAgeBetween(10, 30).forEach(System.out::println);
+
         // personRepository.findAllByFirstName("Ram").forEach(System.out::println);
         // personRepository.findAllByAgeBetween(10, 40).forEach(System.out::println);
         // personRepository.findAllByFirstNameContainingIgnoreCaseOrAgeGreaterThan("ram", 20);
-        personRepository.findAllByLastNameEndingWithIgnoreCaseOrAgeGreaterThanOrderByAgeDesc("as", 30).forEach(System.out::println);
+        //personRepository.findAllByLastNameEndingWithIgnoreCaseOrAgeGreaterThanOrderByAgeDesc("as", 30).forEach(System.out::println);
 //        Person person = new Person();
 //        person.setFirstName("Ram");
 //        person.setLastName("Das");
