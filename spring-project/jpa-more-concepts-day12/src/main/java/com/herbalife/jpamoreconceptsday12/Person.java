@@ -24,6 +24,10 @@ public class Person {
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
+    private List<Car> cars;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
     private List<Dog> dogs;
 
     public void addDog(Dog dog) {
