@@ -235,6 +235,15 @@ create table training.persons(
 * @ConfigurationProperties(prefix = "")
 * @RestController
 
+### JPA
+
+* Java Persistence API
+* Uniform API to use any ORM framework from Java applications
+* Hibernate, TopLink, JDO
+* Create an Entity class. Map the class with the table. Map the variables with the Columns
+* @Entity, @Table, @Id, @Column
+* Define the DAO(or repository)
+* save, delete, finder methods
 
 
 
