@@ -14,7 +14,7 @@ public class Account {
     @Id
     @Column(name = "account_number")
     private String accountNumber;
-    @Column
+    @Column(unique = true)
     private String owner;
     @Column
     private int balance;
