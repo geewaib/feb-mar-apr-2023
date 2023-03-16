@@ -9,6 +9,12 @@ import java.util.List;
 public interface PersonRepository extends JpaRepository<Person, Integer> {
     //findBy and findAllBy methods
 
+    @Query(value = "select p from Person p where size(p.dogs) > 0 ")
+    List<Person> loadPersonsWithAtleastOneDog();
+
+    @Query(value = "select p from Person p join fetch p.dogs ")
+    List<Person> loadPersonsAlongWithDog();
+
     @Query(value = "select * from persons p where p.age between :start and :end", nativeQuery = true) //NOT RECOMMENDED
     List<Person> loadPersonsWithAgeBtn(@Param("start") int start, @Param("end") int end);
 
