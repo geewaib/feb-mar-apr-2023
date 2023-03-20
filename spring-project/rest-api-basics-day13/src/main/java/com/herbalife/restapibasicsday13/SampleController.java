@@ -1,9 +1,27 @@
 package com.herbalife.restapibasicsday13;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @RestController
 public class SampleController {
+
+    @GetMapping("/divide/{a}/{b}")
+    public int divide(@PathVariable int a, @PathVariable int b) {
+        int result = a / b;
+        return result;
+    }
+
+//    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+//    public String handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex, WebRequest webRequest) {
+//        return "Error: " + ex.getMessage();
+//    }
+//
+//    @ExceptionHandler(ArithmeticException.class)
+//    public String handleArithmeticException(ArithmeticException ex, WebRequest webRequest) {
+//        return "Error: " + ex.getMessage();
+//    }
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -23,7 +41,7 @@ public class SampleController {
     }
 
     @GetMapping("/welcome/{firstName}/{lastName}")
-    public String greet(@PathVariable("firstName") String firstName, @PathVariable("lastName")String lastName) {
+    public String greet(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
         return "Hi " + firstName + " " + lastName;
     }
 
