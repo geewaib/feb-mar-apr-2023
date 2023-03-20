@@ -7,11 +7,23 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.time.Instant;
 
 @RestControllerAdvice
 public class AppExceptionHandler {
+
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public HttpEntity<String> handleException(NoHandlerFoundException ex, WebRequest webRequest) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public HttpEntity<String> handleRuntimeException(RuntimeException ex, WebRequest webRequest) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public HttpEntity<ErrorResponse> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex, WebRequest webRequest) {
         ErrorResponse errorResponse = new ErrorResponse();
