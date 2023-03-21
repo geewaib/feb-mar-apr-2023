@@ -18,3 +18,23 @@ docker run -p3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql:latest
 docker run -p3306:3306 -vYOUR_HOST_MACHINE_PATH:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=root mysql:latest
 
 ```
+
+### Containerizing your spring boot API
+
+* Package it to a jar 
+* Bundle it as an image
+* Run the image
+
+#### Bundling as an image
+
+* Define a configuration file
+* **Dockerfile**
+* Dockerfile is a simple configuration file that contains instructions to run your application
+
+``` yml
+
+FROM eclipse-temurin:11-alpine
+COPY target/my-api-1.0.0.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+```
