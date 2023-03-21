@@ -245,7 +245,15 @@ create table training.persons(
 * Define the DAO(or repository)
 * save, delete, finder methods
 
+### REST API
 
+* Spring starter web
+* Tomcat embedded in your application
+* Create RestController classes and have the mappings(Get, Post, Put, Delete)
+* @PathVariable, @RequestParam
+* @RequestBody
+* @ExceptionHandler, @RestControllerAdvice
+* Jackson library
 
 
 
