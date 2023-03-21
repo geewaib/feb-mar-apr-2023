@@ -2,6 +2,9 @@ package com.herbalife.springbootrestapilab06.exception;
 
 import com.herbalife.springbootrestapilab06.constants.MessageConstants;
 import com.herbalife.springbootrestapilab06.dto.ErrorResponse;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -25,6 +28,8 @@ public class AppExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+
+    @ApiResponse(description = "Topic is not found in DB", responseCode = "500", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
     @ExceptionHandler(TopicNotFoundException.class)
     public HttpEntity<ErrorResponse> handleTopicNotFoundException(TopicNotFoundException ex, WebRequest webRequest) {
         String message = String.format(MessageConstants.TOPIC_NOT_FOUND, ex.getMessage());
@@ -34,6 +39,7 @@ public class AppExceptionHandler {
     }
 
     @ExceptionHandler(TopicAlreadyExistsException.class)
+    @ApiResponse(description = "Topic is already present in DB", responseCode = "500", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))})
     public HttpEntity<ErrorResponse> handleTopicAlreadyExistsException(TopicAlreadyExistsException ex, WebRequest webRequest) {
         String message = String.format(MessageConstants.TOPIC_EXISTS, ex.getMessage());
         log.error(message);
