@@ -255,6 +255,18 @@ create table training.persons(
 * @ExceptionHandler, @RestControllerAdvice
 * Jackson library
 
+### Packaging spring boot applications
+
+* You can package or bundle a java application as a jar or war file
+* war is used for web applications
+* war files have to be deployed in a server
+* jar files can be run on its own using **java -jar** option
+* Spring boot packages all the applications to a jar file, by default
+* Spring boot REST api is packaged as a jar file. Jar file contains the tomcat server
+* It can be run on its own. You can change the properties dynamically using **-Dkey=value** 
+* **-Dserver.port=8081**
+* Containerizing a spring boot application; Create a Dockerfile with instructions to run the application
+* Create a docker image and start the container
 
 
 
