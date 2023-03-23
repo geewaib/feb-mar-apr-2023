@@ -269,7 +269,11 @@ create table training.persons(
 * Create a docker image and start the container
 
 
+### JEE sdk
 
+* contains packages and modules for building enterprise applications
+* Web application specs
+* **Servlet**: Java class that can receive requests and send back responses
 
 
 
