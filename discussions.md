@@ -275,6 +275,18 @@ create table training.persons(
 * Web application specs
 * **Servlet**: Java class that can receive requests and send back responses
 
+### Internals of Spring boot Rest api
+
+* **DispatcherServlet** acts as a front controller
+* It receives all the requests to the application
+* Dispatches the requests to the controllers
+* Sends the response back to the user
+* Servlet is a java class created using servlet API. You can send requests and receive responses from the servlet
+* Tomcat is known as a servlet container or servlet engine
+* Every request to the application is converted to a Thread and processed by the **DispatcherServlet**
+
+
+
 
 
 
