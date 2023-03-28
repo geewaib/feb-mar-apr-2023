@@ -9,4 +9,6 @@ spring:
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
     consumer:
       auto-offset-reset: earliest
+      max-poll-records: 100
+
 
