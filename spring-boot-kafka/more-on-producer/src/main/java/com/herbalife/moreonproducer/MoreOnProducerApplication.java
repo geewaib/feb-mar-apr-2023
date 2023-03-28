@@ -1,13 +1,13 @@
-package com.herbalife.sampleproducer;
+package com.herbalife.moreonproducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleProducerApplication {
+public class MoreOnProducerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SampleProducerApplication.class, args);
+        SpringApplication.run(MoreOnProducerApplication.class, args);
     }
 
 }

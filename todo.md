@@ -5,3 +5,4 @@
 * CompositeKey 
 * **KeyVault** to store credentials
 * **Kafka:**; Offset rebalancing after retention period
+* **multi-stage-build** in docker 

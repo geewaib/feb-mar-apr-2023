@@ -9,17 +9,17 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.herbalife</groupId>
-    <artifactId>sample-producer</artifactId>
+    <artifactId>more-on-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sample-producer</name>
-    <description>sample-producer</description>
+    <name>more-on-consumer</name>
+    <description>more-on-consumer</description>
     <properties>
         <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.kafka</groupId>

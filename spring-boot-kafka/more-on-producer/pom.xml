@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.herbalife</groupId>
-    <artifactId>sample-producer</artifactId>
+    <artifactId>more-on-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sample-producer</name>
-    <description>sample-producer</description>
+    <name>more-on-producer</name>
+    <description>more-on-producer</description>
     <properties>
         <java.version>11</java.version>
     </properties>

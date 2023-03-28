@@ -1,10 +1,10 @@
-package com.herbalife.sampleproducer;
+package com.herbalife.moreonproducer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleProducerApplicationTests {
+class MoreOnProducerApplicationTests {
 
     @Test
     void contextLoads() {
