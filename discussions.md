@@ -285,6 +285,39 @@ create table training.persons(
 * Tomcat is known as a servlet container or servlet engine
 * Every request to the application is converted to a Thread and processed by the **DispatcherServlet**
 
+### Kafka with Spring
+
+* Paves way for async communication
+* you want to stream tons of data accross your services, kafka is a potential candidate
+* Azure Event Hub, AWS Kinesis, Confluent Kafka on the cloud, Apache Kafka
+* Set up a cluster of kafka brokers managed by a coordinator called Zookeeper
+* Stores the messages(or events) in Topics
+* Topic is like a bucket that has the messages
+* The messages in the topics can be consumed by consumers
+* The consumers specify a consumer group id
+* Each consumer group processes the messages on the topic only once
+* Kafka maintains the offset of each consumer group
+* Spring boot kafka library; configure kafka in yml file
+* KafkaTemplate to publish messages
+* @KafkaListener to read messages
+* Consumer application keeps polling kafka every x ms
+* Consumer application in Spring boot polls and **fetches messages in batch**. It processes each message sequentially
+
+### Sync communication in Java/Spring
+
+* If you want to communicate with another service/API synchronously here're the options
+
+* **RestTemplate** provided by Spring _Maintainence mode. Not preferred_
+* **HttpClient** provided by core Java (from Java 11 onwards)
+* **WebClient** provided by Spring
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: movie-details-fetcher
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      security.protocol: PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
+    consumer:
+      auto-offset-reset: earliest
+
+movie:
+  topic: movie-topic
+  consumer:
+    group: movie-consumer-group-local
+
+omdb:
+  base:
+    url: http://www.omdbapi.com/?i=tt3896198&apikey=52d1c7f&t=

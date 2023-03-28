@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: movie-producer
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      security.protocol: PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
+
+movie:
+  topic: movie-topic
