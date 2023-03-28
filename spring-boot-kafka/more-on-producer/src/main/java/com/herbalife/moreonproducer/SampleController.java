@@ -10,10 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
 
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @PostMapping("/{data}")
     public void postData(@PathVariable String data) {
         kafkaTemplate.send("tuesday-topic", data);
     }
+
+    @PostMapping("/{key}/{data}")
+    public void postData(@PathVariable String key, @PathVariable String data) {
+        kafkaTemplate.send("tuesday-topic", key, data);
+    }
+
+
 }
