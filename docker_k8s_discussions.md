@@ -38,3 +38,64 @@ COPY target/my-api-1.0.0.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ```
+
+### k8s
+
+* Scalability, orchestration of containers
+* **pods**: Fundamental building blocks of k8s
+* A pod is a wrapper to a container
+* Using k8s you can launch, kill, scale up/down pods
+* Two things you need to work with k8s: cluster, k8s tools
+
+#### To Do
+
+* Create a spring boot rest application that runs on 8080
+
+``` java
+@RestController
+public class SampleController {
+	@GetMapping("/hello/{name}")
+	public String hello(@PathVariable String name) {
+		return "Hello " + name;
+	}
+}
+```
+
+* Dockerize it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
