@@ -62,6 +62,22 @@ public class SampleController {
 ```
 
 * Dockerize it
+* Kubernetize it
+* Create pods
+* Pods are wrappers to containers
+* They automatically restart on crash/stop
+
+#### some k8s commands
+
+
+```
+kubectl version
+kubectl config get-contexts
+kubectl get pods
+kubectl run pod-name --image=image-name
+kubectl describe pod pod-name
+kubectl delete pod pod-name
+```
 
 
 
