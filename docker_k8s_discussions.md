@@ -77,6 +77,7 @@ kubectl get pods
 kubectl run pod-name --image=image-name
 kubectl describe pod pod-name
 kubectl delete pod pod-name
+kubectl create namespace wednesday
 ```
 
 
@@ -84,12 +85,13 @@ kubectl delete pod pod-name
 docker tag hello-api:1.0.0 <hubAccountUsername>/<repoName>:hello-api-1.0.0
 docker login
 docker push <hubAccountUsername>/<repoName>:hello-api-1.0.0
-kubectl run <pod-name> --image=<hubAccountUsername>/<repoName>:hello-api-1.0.0
+kubectl run <pod-name> --image=<hubAccountUsername>/<repoName>:hello-api-1.0.0 --namespace=wednesday
 kubectl get pods
-
 ```
 
-
+* local  image name -> hello-api:1.0.0
+* docker hub image name -> accountName/repoName:hello-api-1.0.0
+* ACR image name -> repoName.azurecr.io:hello-api-1.0.0
 
 
 
