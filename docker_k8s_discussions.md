@@ -80,7 +80,14 @@ kubectl delete pod pod-name
 ```
 
 
+```
+docker tag hello-api:1.0.0 <hubAccountUsername>/<repoName>:hello-api-1.0.0
+docker login
+docker push <hubAccountUsername>/<repoName>:hello-api-1.0.0
+kubectl run <pod-name> --image=<hubAccountUsername>/<repoName>:hello-api-1.0.0
+kubectl get pods
 
+```
 
 
 

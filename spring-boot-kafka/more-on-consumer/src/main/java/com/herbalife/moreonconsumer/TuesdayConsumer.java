@@ -5,7 +5,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class TuesdayConsumer {
 
     @KafkaListener(topics = "tuesday-topic", groupId = "tuesday-topic-consumer-group-local2")
