@@ -1,28 +1,28 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: thursday
-  labels:
-    app: hello-thursday
-  name: hello-thursday
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: hello-thursday
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: hello-thursday
-    spec:
-      containers:
-        - image: irahulsingh/playground:hello-api-1.0.0
-          name: hello-thursday
-          resources: {}
-status: {}
----
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  namespace: thursday
+#  labels:
+#    app: hello-thursday
+#  name: hello-thursday
+#spec:
+#  replicas: 3
+#  selector:
+#    matchLabels:
+#      app: hello-thursday
+#  strategy: {}
+#  template:
+#    metadata:
+#      creationTimestamp: null
+#      labels:
+#        app: hello-thursday
+#    spec:
+#      containers:
+#        - image: irahulsingh/playground:hello-api-1.0.0
+#          name: hello-thursday
+#          resources: {}
+#status: {}
+#---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
