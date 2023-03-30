@@ -1,22 +1,24 @@
 spring:
   application:
-    name: much-more-consumer-app
+    name: movie-details-fetcher
   kafka:
     bootstrap-servers: localhost:9092
     properties:
       security.protocol: PLAINTEXT
       sasl.mechanism: PLAIN
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
-      spring:
-        json:
-          trusted:
-            packages: '*'
     consumer:
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      #max-poll-records: 1
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+movie:
+ topic: movie-topic
+ group: movie-topic-consumer-local
+ details:
+   topic: movie-details-topic
+
+omdb:
+  base:
+    url: http://www.omdbapi.com/?i=tt3896198&apikey=52d1c7f&t=

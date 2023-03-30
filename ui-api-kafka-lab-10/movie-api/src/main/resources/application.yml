@@ -1,6 +1,6 @@
 spring:
   application:
-    name: much-more-consumer-app
+    name: movie-api
   kafka:
     bootstrap-servers: localhost:9092
     properties:
@@ -12,11 +12,12 @@ spring:
           trusted:
             packages: '*'
     consumer:
-      auto-offset-reset: earliest
+      auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      #max-poll-records: 1
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+movie:
+  topic: movie-topic
+  details:
+    topic: movie-details-topic
+    group: movie-details-topic-consumer-local

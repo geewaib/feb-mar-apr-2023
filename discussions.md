@@ -302,6 +302,9 @@ create table training.persons(
 * @KafkaListener to read messages
 * Consumer application keeps polling kafka every x ms
 * Consumer application in Spring boot polls and **fetches messages in batch**. It processes each message sequentially
+* You can post message of any type; Configure key and value Serializers
+* You can consume message of any type; Configure key and value Deserializers
+* @RetryableTopic; Specify attempts, backoff strategy; the unprocessed message gets posted to DLT
 
 ### Sync communication in Java/Spring
 

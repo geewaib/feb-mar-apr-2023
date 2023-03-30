@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie</title>
+    <script>
+        let url = "http://localhost:8080/movies";
+        let detailsCheckInterval = null;
+        const submitMovieName = () => {
+            let movieName = document.getElementById("movieText").value;
+            fetch(`${url}/${movieName}`, {
+                method: "POST",
+                mode: "cors"
+            })
+                .then(response => response.text())
+                .then(response => {
+                    document.getElementById("movieResult").innerHTML = response;
+                    detailsCheckInterval = window.setInterval("fetchMovieDetails()", 10);
+                })
+                .catch(err => document.getElementById("movieResult").innerHTML = err.message);
+        };
+        const fetchMovieDetails = () => {
+            let movieName = document.getElementById("movieText").value;
+            fetch(`${url}/${movieName}`, {
+                method: "GET",
+                mode: "cors",
+            })
+                .then(response => {
+                    response.text();
+                })
+                .then(response => {
+                    let output = JSON.parse(response);
+                    if(output.error) {
+                        document.getElementById("movieResult").innerHTML = "Fetching details ...";
+                    } else {
+                        document.getElementById("movieResult").innerHTML = response;
+                        window.clearInterval(detailsCheckInterval);
+                    }
+                })
+                .catch(err => {
+                    document.getElementById("movieResult").innerHTML = "Oops! something has gone wrong";
+                });
+        };
+    </script>
+</head>
+<body>
+<h1>Movie application</h1>
+<input type="text" placeholder="Movie name" id="movieText">
+<br/>
+<button id="movieDetailsBtn" onclick="submitMovieName();">Get Movie details</button>
+<h1 id="movieResult"></h1>
+</body>
+</html>
