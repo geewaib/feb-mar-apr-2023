@@ -22,3 +22,21 @@ spec:
           name: hello
           resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello
+  namespace: thursday
+spec:
+  selector:
+    app: hello
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      #targetPort refers to the port where the pod services are running
+      targetPort: 8080
+      #nodePort refers to the port that end users will use
+      nodePort: 30036
+      protocol: TCP
