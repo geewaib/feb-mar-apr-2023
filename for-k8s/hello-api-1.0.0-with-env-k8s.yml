@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: thursday
+  labels:
+    app: hello
+  name: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello
+    spec:
+      containers:
+        - image: prabhudev/demo:hello-api-1.0.0
+          name: hello
+          env:
+            - name: WELCOME
+              value: "Welcome to k8s"
+          resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello
+  namespace: thursday
+spec:
+  selector:
+    app: hello
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      #targetPort refers to the port where the pod services are running
+      targetPort: 8080
+      #nodePort refers to the port that end users will use
+      nodePort: 30036
+      protocol: TCP
