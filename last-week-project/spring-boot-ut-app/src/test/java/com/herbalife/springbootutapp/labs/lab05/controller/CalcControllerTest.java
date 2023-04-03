@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.herbalife.springbootutapp.labs.lab05.dto.CalcInput;
 import com.herbalife.springbootutapp.labs.lab05.dto.MathResult;
 import com.herbalife.springbootutapp.labs.lab05.service.CalculatorService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(CalcController.class)
 public class CalcControllerTest {

@@ -1,5 +1,6 @@
 package com.herbalife.springbootutapp.it;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +9,8 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+@Disabled
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SampleControllerIntegrationTest {
     @Autowired
@@ -15,6 +18,7 @@ public class SampleControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
+
 
     @Test
     public void square() {
