@@ -5,13 +5,14 @@ import com.herbalife.moreonjpa.repo.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -30,8 +31,10 @@ public class PersonService {
         personRepository.save(person);
     }
 
-    @Transactional
+
+    @Transactional(isolation = Isolation.READ_UNCOMMITTED)
     public void createPersonsForBankAccount(String kidFirstName, String kidLastName, String guardianFirstName, String guardianLastName) {
+        //Use TransactionTemplate if you want to manage txn programmatically
         create(kidFirstName, kidLastName);
         create(guardianFirstName, guardianLastName);
     }
