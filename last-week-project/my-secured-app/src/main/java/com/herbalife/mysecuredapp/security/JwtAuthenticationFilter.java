@@ -68,7 +68,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withExpiresAt(Instant.now().plus(15, ChronoUnit.MINUTES))
                 .sign(Algorithm.HMAC512("DEMO".getBytes()));
         System.out.println(token);
-        String body = ((String)auth.getPrincipal()) + "-" + token;
+        String body = token;
 
         res.getWriter().write(body);
         res.getWriter().flush();

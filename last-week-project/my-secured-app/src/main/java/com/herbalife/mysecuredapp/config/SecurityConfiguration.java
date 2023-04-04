@@ -28,7 +28,6 @@ public class SecurityConfiguration {
                 .authorizeRequests(auth -> auth
                         .antMatchers("/api/services/user/login").permitAll()
                         .anyRequest().authenticated());
-        // http.authenticationProvider(databaseAuthenticationProvider);
         JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(myCustomAuthenticationManager);
         JwtAuthorizationFilter jwtAuthorizationFilter = new JwtAuthorizationFilter(myCustomAuthenticationManager);
         http.addFilter(jwtAuthenticationFilter);
