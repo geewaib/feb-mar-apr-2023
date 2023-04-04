@@ -1,4 +1,4 @@
-package com.herbalife.mysecuredapp;
+package com.herbalife.mysecuredapp.security;
 
 import com.herbalife.mysecuredapp.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,10 @@ public class DatabaseAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
-        String password = passwordEncoder.encode(String.valueOf(authentication.getCredentials()));
-        System.out.println(password);
+        String password = String.valueOf(authentication.getCredentials());
         UserDetails userDetails = appUserService.loadUserByUsername(username);
         if (userDetails != null) {
-            if (password.equalsIgnoreCase(userDetails.getPassword())) {
+            if (passwordEncoder.matches(password, userDetails.getPassword())) {
                 UsernamePasswordAuthenticationToken authenticationToken =
                         new UsernamePasswordAuthenticationToken(username, password, userDetails.getAuthorities());
                 return authenticationToken;
@@ -39,4 +38,5 @@ public class DatabaseAuthenticationProvider implements AuthenticationProvider {
     public boolean supports(Class<?> authenticationType) {
         return UsernamePasswordAuthenticationToken.class.equals(authenticationType);
     }
+
 }

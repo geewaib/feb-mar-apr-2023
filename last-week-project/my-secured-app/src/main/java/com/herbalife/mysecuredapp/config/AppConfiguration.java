@@ -1,4 +1,4 @@
-package com.herbalife.mysecuredapp;
+package com.herbalife.mysecuredapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

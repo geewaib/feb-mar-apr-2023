@@ -1,4 +1,4 @@
-package com.herbalife.mysecuredapp;
+package com.herbalife.mysecuredapp.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
