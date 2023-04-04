@@ -32,7 +32,7 @@ public class PersonService {
     }
 
 
-    @Transactional(isolation = Isolation.READ_UNCOMMITTED)
+    @Transactional //(isolation = Isolation.READ_UNCOMMITTED)
     public void createPersonsForBankAccount(String kidFirstName, String kidLastName, String guardianFirstName, String guardianLastName) {
         //Use TransactionTemplate if you want to manage txn programmatically
         create(kidFirstName, kidLastName);
